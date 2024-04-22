@@ -261,7 +261,7 @@ impl<'a> Config<'a> {
         let model_schema_ident =
             format_ident!("{}_SCHEMA", ident.to_string().to_screaming_snake_case());
 
-        let table_name = ident.to_string().to_table_case();
+        let table_name = ident.to_string().to_lowercase().to_snake_case();
 
         // Search for a field with the #[id] attribute
         let id_attr = &named
